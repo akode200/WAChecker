@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WhatsApp Bulk Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>WhatsApp Bulk Checker</h1>
+    <p class="muted">Paste daftar nomor (satu per baris, atau dipisah koma/spasi). Format: tanpa tanda +, contoh <code>6281234567890</code>.</p>
+
+    <textarea id="numbers" placeholder="Contoh:\n6281234567890\n081234567890"></textarea>
+
+    <div class="controls">
+      <label>Workers: <input id="workers" type="number" min="1" max="50" value="8"></label>
+      <label>Timeout (s): <input id="timeout" type="number" min="2" max="30" value="8"></label>
+      <button id="start">Check All</button>
+      <button id="download" disabled>Download CSV</button>
+    </div>
+
+    <div id="progressWrap" class="progress-wrap" hidden>
+      <div id="progressBar" class="progress-bar"></div>
+      <div id="progressText" class="progress-text">0 / 0</div>
+    </div>
+
+    <div id="resultsArea"></div>
+
+    <p class="small muted">Disclaimer: metode non-resmi. Untuk produksi gunakan WhatsApp Business API.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
